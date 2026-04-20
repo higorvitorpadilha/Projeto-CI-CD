@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("API rodando 🚀");
+  res.send("nova versão 🚀");
 });
 
 app.get("/health", (req, res) => {
