@@ -30,11 +30,9 @@ steps:
     run: |
       docker build -t api .
       
-      # versão única (hash)
       docker tag api:latest ${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG
       docker push ${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG
       
-      # latest (compatibilidade com ECS atual)
       docker tag api:latest ${{ secrets.ECR_REPOSITORY }}:latest
       docker push ${{ secrets.ECR_REPOSITORY }}:latest
 
