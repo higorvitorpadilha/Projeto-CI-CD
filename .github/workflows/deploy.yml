@@ -7,7 +7,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
@@ -22,14 +21,19 @@ jobs:
       - name: Login no ECR
         uses: aws-actions/amazon-ecr-login@v1
 
+      # 🔥 NOVO: versão legível
       - name: Definir versão da imagem
-        run: echo "IMAGE_TAG=${GITHUB_SHA}" >> $GITHUB_ENV
+        run: echo "IMAGE_TAG=v1-${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
 
       - name: Build e Push da imagem
         run: |
           docker build -t api .
+          
+          # versão automática
           docker tag api:latest ${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG
           docker push ${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG
+          
+          # mantém latest pro ECS atual
           docker tag api:latest ${{ secrets.ECR_REPOSITORY }}:latest
           docker push ${{ secrets.ECR_REPOSITORY }}:latest
 
