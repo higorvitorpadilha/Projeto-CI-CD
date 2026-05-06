@@ -1,56 +1,62 @@
-🚀 Projeto CI/CD Completo com GitHub Actions + Docker + AWS ECS
+# 🚀 Projeto CI/CD com GitHub Actions + Docker + AWS ECS
 
-Sistema de automação de deploy utilizando práticas modernas de DevOps com:
+Sistema de automação de deploy utilizando práticas modernas de DevOps e Cloud Computing.
 
-⚡ GitHub Actions
-🐳 Docker
-☁️ AWS ECS
-🔐 Secrets & Environment Variables
-📦 Continuous Integration (CI)
-🚀 Continuous Delivery (CD)
-🛡️ Deploy sem downtime
-🔄 Pipeline automatizada
-📌 Objetivo do Projeto
+---
 
-Este projeto foi criado para demonstrar um fluxo profissional de CI/CD utilizando containers Docker e deploy automatizado na AWS.
+## 📌 Objetivo
 
-A pipeline realiza:
+Este projeto demonstra um fluxo completo de **CI/CD profissional** utilizando:
 
-Build da aplicação
-Execução de testes automatizados
-Validação do código
-Criação da imagem Docker
-Push para registry
-Deploy automático no ECS
-Atualização segura da aplicação sem downtime
-🏗️ Arquitetura
-Developer Push
-       ↓
-GitHub Actions
-       ↓
-Build + Test
-       ↓
-Docker Build
-       ↓
-Push Image
-       ↓
-AWS ECS Deploy
-       ↓
-Running Container
-⚙️ Tecnologias Utilizadas
-DevOps
-Docker
-GitHub Actions
-AWS ECS
-AWS ECR
-YAML Pipelines
-Backend
-Node.js / Python / (adicione sua stack)
-REST API
-Versionamento
-Git
-GitHub Flow
-📂 Estrutura do Projeto
+- GitHub Actions
+- Docker
+- AWS ECS
+- AWS ECR
+- Deploy automatizado
+- Pipeline sem downtime
+
+A ideia é simular uma arquitetura moderna utilizada em ambientes reais de produção.
+
+---
+
+# 🏗️ Arquitetura do Fluxo
+
+```mermaid
+graph TD
+
+A[Developer Push] --> B[GitHub Actions]
+B --> C[Build da Aplicação]
+C --> D[Testes Automatizados]
+D --> E[Docker Build]
+E --> F[Push para AWS ECR]
+F --> G[Deploy AWS ECS]
+G --> H[Aplicação em Produção]
+```
+
+---
+
+# ⚙️ Tecnologias Utilizadas
+
+## DevOps
+- Docker
+- GitHub Actions
+- AWS ECS
+- AWS ECR
+- YAML Pipelines
+
+## Backend
+- Node.js
+- Python
+
+## Versionamento
+- Git
+- GitHub
+
+---
+
+# 📂 Estrutura do Projeto
+
+```bash
 .
 ├── .github/
 │   └── workflows/
@@ -60,87 +66,159 @@ GitHub Flow
 ├── docker-compose.yml
 ├── package.json
 └── README.md
-🔄 Pipeline CI/CD
-Continuous Integration
+```
 
-A cada push ou pull request:
+---
 
-Instala dependências
-Executa lint
-Roda testes
-Valida build
-Continuous Delivery
+# 🔄 Pipeline CI/CD
 
-Após aprovação na branch principal:
+## Continuous Integration (CI)
 
-Cria imagem Docker
-Publica no AWS ECR
-Atualiza serviço ECS
-Realiza deploy automatizado
-🐳 Docker
-Build da imagem
+A cada `push` ou `pull request`:
+
+- Instala dependências
+- Executa lint
+- Roda testes
+- Valida build
+
+---
+
+## Continuous Delivery (CD)
+
+Após merge na branch principal:
+
+- Cria imagem Docker
+- Publica no AWS ECR
+- Atualiza serviço ECS
+- Realiza deploy automatizado
+
+---
+
+# 🐳 Docker
+
+## Build da aplicação
+
+```bash
 docker build -t app-ci-cd .
-Rodar container
+```
+
+## Executar container
+
+```bash
 docker run -p 3000:3000 app-ci-cd
-☁️ Deploy AWS ECS
+```
+
+---
+
+# ☁️ Deploy AWS ECS
 
 O deploy utiliza:
 
-Amazon ECS
-Amazon ECR
-GitHub Secrets
-IAM Roles
+- Amazon ECS
+- Amazon ECR
+- IAM Roles
+- GitHub Secrets
+
+---
+
+# 🔐 Variáveis de Ambiente
 
 Secrets configurados no GitHub:
 
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-AWS_REGION
-ECR_REPOSITORY
-ECS_SERVICE
-ECS_CLUSTER
-🔐 Segurança
+```env
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=
+ECR_REPOSITORY=
+ECS_SERVICE=
+ECS_CLUSTER=
+```
 
-Boas práticas implementadas:
+---
 
-Secrets protegidos
-Variáveis sensíveis via GitHub Secrets
-Pipeline automatizada
-Deploy controlado
-Separação de ambientes
-🚀 Como Executar Localmente
-Clonar projeto
+# 🛡️ Boas Práticas Aplicadas
+
+- Deploy automatizado
+- Pipeline CI/CD
+- Containers Docker
+- Separação de ambientes
+- Segurança com GitHub Secrets
+- Infraestrutura escalável
+- Deploy sem downtime
+
+---
+
+# 🚀 Executando Localmente
+
+## Clonar repositório
+
+```bash
 git clone https://github.com/higorvitorpadilha/Projeto-CI-CD.git
-Entrar na pasta
+```
+
+## Entrar na pasta
+
+```bash
 cd Projeto-CI-CD
-Rodar aplicação
+```
+
+## Subir containers
+
+```bash
 docker-compose up --build
-📸 Workflow em Execução
+```
+
+---
+
+# 📸 Workflow em Execução
 
 Adicione prints aqui:
 
-GitHub Actions rodando
-ECS funcionando
-Deploy realizado
-Logs da pipeline
-📈 Melhorias Futuras
- Terraform
- Kubernetes
- SonarQube
- Testes E2E
- Blue/Green Deployment
- Monitoramento com CloudWatch
- Observabilidade com Grafana
-🧠 Conceitos Aplicados
-CI/CD
-DevOps
-Containers
-Cloud Computing
-Infraestrutura Automatizada
-Deploy sem downtime
-Pipelines modernas
-👨‍💻 Autor
+- GitHub Actions rodando
+- ECS funcionando
+- Logs da pipeline
+- Deploy concluído
 
-Desenvolvido por Higor Padilha.
+---
 
-Conecte-se comigo no LinkedIn (https://www.linkedin.com/in/higor-padilha-41aaa4236/) para trocar ideias sobre desenvolvimento, cloud e DevOps.
+# 📈 Melhorias Futuras
+
+- [ ] Terraform
+- [ ] Kubernetes
+- [ ] SonarQube
+- [ ] Testes E2E
+- [ ] Blue/Green Deployment
+- [ ] CloudWatch
+- [ ] Grafana
+
+---
+
+# 🧠 Conceitos Aplicados
+
+- CI/CD
+- DevOps
+- Cloud Computing
+- Containers
+- Infraestrutura Automatizada
+- Deploy Contínuo
+- Dockerização
+
+---
+
+# 👨‍💻 Autor
+
+Desenvolvido por **Higor Padilha**.
+
+📎 LinkedIn:  
+https://www.linkedin.com/in/higor-padilha-41aaa426/
+
+---
+
+# ⭐ Diferenciais do Projeto
+
+✅ Deploy automatizado na AWS  
+✅ Pipeline profissional  
+✅ Estrutura escalável  
+✅ Dockerização completa  
+✅ Integração contínua  
+✅ Fluxo próximo de ambiente real de produção
