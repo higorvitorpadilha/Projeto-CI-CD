@@ -143,4 +143,4 @@ Pipelines modernas
 
 Desenvolvido por Higor Padilha.
 
-Conecte-se comigo no LinkedIn para trocar ideias sobre desenvolvimento, cloud e DevOps.
+Conecte-se comigo no LinkedIn (https://www.linkedin.com/in/higor-padilha-41aaa4236/) para trocar ideias sobre desenvolvimento, cloud e DevOps.
